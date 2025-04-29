@@ -10,7 +10,7 @@ Se è un booleano: stampa “Sì” o “No” in base al suo valore
 In tutti gli altri casi: stampa “Tipo non supportato”
 */
 
-let dato: unknown = '';
+let dato: unknown = [2, 4];
 
 if (typeof dato === 'string') {
   console.log(dato.toUpperCase());
@@ -20,6 +20,9 @@ if (typeof dato === 'string') {
   console.log(dato ? 'Sì' : 'No');
 } else if (dato === null) {
   console.log('Il dato è vuoto');
-} else {
+} else if (Array.isArray(dato)) {
+  console.log(dato.length);
+}
+else {
   console.log('Tipo non supportato!');
 }
